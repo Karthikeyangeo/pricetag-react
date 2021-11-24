@@ -5,6 +5,8 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import { useHistory } from 'react-router-dom';
 import { Switch, Route } from "react-router-dom";
+import { Pricetag } from './Pricetag';
+import {HtmlCode} from './HtmlCode';
 
 function App() {
   const history = useHistory();
@@ -19,7 +21,7 @@ function App() {
             color="inherit"
             aria-label="Home"
             sx={{ mr: 2 }}
-            onClick = {()=>console.log("Home")}
+            onClick = {()=>history.push('/')}
           >
            Home
           </IconButton>
@@ -30,7 +32,7 @@ function App() {
             color="inherit"
             aria-label="Result"
             sx={{ mr: 2 }}
-            onClick = {()=>console.log("Result")}
+            onClick = {()=>history.push("/result")}
           >
            Result
           </IconButton>
@@ -41,7 +43,7 @@ function App() {
             color="inherit"
             aria-label="HTML"
             sx={{ mr: 2 }}
-            onClick = {()=>console.log("HTML")}
+            onClick = {()=>history.push("/html")}
           >
            HTML
           </IconButton>
@@ -78,8 +80,25 @@ function App() {
          
         </Toolbar>
       </AppBar>
+      
+        <Switch>
+          <Route exact path ="/">
+            <div>
+              <h1>Home Page</h1>
+            </div>
+          </Route>
+          <Route path="/result">
+            <Pricetag />
+          </Route>
+          <Route path ="/html">
+            <HtmlCode />
+          </Route>
+        </Switch>
+        
+  
     </div>
   );
 }
 
 export default App;
+
