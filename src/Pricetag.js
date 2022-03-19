@@ -10,7 +10,7 @@ export function Pricetag() {
         {cardValues.map(({cardTitle,cardPrice,user,storage,unlimitedPublicProjects,communityAccess,unlimitedPrivateProjects,dedicatedPhoneSupport,freeSubdomain,monthlyStatusReport
 },key)=>{
           return(
-            <div className="col-lg-5" key={key}>
+            <div className=" col-12  col-sm-8 col-md-6 col-lg-4" key={key}>
               <div className="card mb-4 mb-lg-0">
                 <div className="card-body">
                   <h5 className="card-title text-muted text-uppercase text-center">{cardTitle}</h5>
